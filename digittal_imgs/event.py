@@ -53,4 +53,13 @@ def mouse_click_img5(event):
 def separate_EVENT(event,path,window):
    
     separate(path,window)
+goc=0
+def rote(event,canvas,resized_image,image_item):
+    global goc
+    goc=goc+45
+    rotated_image = resized_image.rotate(goc, expand=True)
+    photo = ImageTk.PhotoImage(rotated_image)
+    
+    canvas.itemconfig(image_item, image=photo)
+    canvas.image = photo
     
